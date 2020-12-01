@@ -1,6 +1,5 @@
 #include <stdio.h>  // wiadomo po co
 #include <stdlib.h> 
-#include <string.h> // strstr
 #include "strstr.h"
 #include "skorowidz.h"
 
@@ -13,9 +12,7 @@ int ile_slow;
 
 int
 main( int argc, char **argv ) {
-	int i,j;
-	int ile_linii;
-	char buf[BUFSIZE];
+	int i;
 
 	FILE *in= argc > 1 ? fopen( argv[1], "r" ) : stdin;
 
@@ -41,17 +38,6 @@ main( int argc, char **argv ) {
 	words_in_lines(in, ile_slow, lines, slowa);	
 
 	print_words_in_lines(ile_slow, lines, slowa);
-	/*
-	for( i= 0; i < ile_slow; i++ ) {
-		if( lines[i][0] > 0 ) {
-			printf( "słowo \"%s\" wystąpiło w liniach:", slowa[i] );
-			for( j= 1; j <= lines[i][0]; j++ )
-				printf( " %d", lines[i][j] );
-			printf( "\n" );
-		} else {
-		  printf( "nie napotkano słowa \"%s\"\n", slowa[i] );
-		}
-	}*/
 	
 	return EXIT_SUCCESS;
 }
