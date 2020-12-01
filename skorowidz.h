@@ -13,4 +13,6 @@ int **init_words_in_lines(int n);
 
 void words_in_lines(FILE *in, int num_words, int **lines, char **words);
 
+void print_words_in_lines(int num_of_words, int **lines, char **words);
+
 #endif

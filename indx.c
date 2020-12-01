@@ -40,7 +40,8 @@ main( int argc, char **argv ) {
 	lines = init_words_in_lines(argc-2);
 	words_in_lines(in, ile_slow, lines, slowa);	
 
-
+	print_words_in_lines(ile_slow, lines, slowa);
+	/*
 	for( i= 0; i < ile_slow; i++ ) {
 		if( lines[i][0] > 0 ) {
 			printf( "słowo \"%s\" wystąpiło w liniach:", slowa[i] );
@@ -50,7 +51,7 @@ main( int argc, char **argv ) {
 		} else {
 		  printf( "nie napotkano słowa \"%s\"\n", slowa[i] );
 		}
-	}
+	}*/
 	
 	return EXIT_SUCCESS;
 }

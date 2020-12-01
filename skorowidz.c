@@ -1,6 +1,8 @@
 #include "skorowidz.h"
 
-
+/*tworzy struktore do przechowywania wystpien slow w poszczegolnych liniach
+ * wiersze to slowa
+ * wartosci w kolumnach odpowiadaja wsytepowania poszczegolnych slow w liniach */
 int **init_words_in_lines(int n) 
 {
 	num_of_rows = n;
@@ -12,6 +14,8 @@ int **init_words_in_lines(int n)
 	}
 	return lines;
 }
+
+/*sprawdza czy slowo wystepuje w lini i zapisuje je do struktury*/
 
 void words_in_lines(FILE *in, int num_words, int **lines, char **words) 
 {
@@ -30,5 +34,20 @@ void words_in_lines(FILE *in, int num_words, int **lines, char **words)
                                 }
                                 lines[i][lines[i][0]]= num_lines;
                         }
+        }
+}
+
+void print_words_in_lines(int num_of_words, int **lines, char **words) 
+{
+	int i, j;
+	for( i= 0; i < num_of_words; i++ ) {
+		if( lines[i][0] > 0 ) {
+                        printf( "słowo \"%s\" wystąpiło w liniach:", words[i] );
+                        for( j= 1; j <= lines[i][0]; j++ )
+                                printf( " %d", lines[i][j] );
+                        printf( "\n" );
+                } else {
+                  printf( "nie napotkano słowa \"%s\"\n", words[i] );
+                }
         }
 }
